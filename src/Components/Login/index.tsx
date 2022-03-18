@@ -14,7 +14,9 @@ function Login() {
             initialValues={{ email: '', password: '' }}
             validationSchema={Yup.object().shape({
                 email: Yup.string()
-                  .matches(/^[A-z0-9._%+-]+@[A-Z0-9.-]+\.[A-Za-z]{6,}$/)
+                  .matches(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
+
+                  , "Email is not valid")
                   .required(
                     "Please valid email. One uppercase, one lowercase, one special character and no spaces"
                   ),
